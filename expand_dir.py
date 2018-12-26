@@ -5,6 +5,7 @@ import shutil
 """
 gROOT = pathlib.Path(".").absolute()
 
+
 def expandFiles(paths):
     for _ in paths:
         if _.is_file():
@@ -15,6 +16,8 @@ def expandFiles(paths):
         else:
             new_path = list(_.iterdir())
             expandFiles(new_path)
+
+
 def removeDirs(paths):
     for _ in paths:
         if _.is_dir():
@@ -23,12 +26,12 @@ def removeDirs(paths):
             except OSError:
                 removeDirs(list(_.iterdir()))
 
+
 def main():
     dirs = [_ for _ in gROOT.iterdir() if _.is_dir()]
     expandFiles(dirs)
     removeDirs(dirs)
 
+
 if __name__ == "__main__":
     main()
-
-
