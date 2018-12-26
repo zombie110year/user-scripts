@@ -1,9 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from argparse import ArgumentParser
-import win32clipboard as c
-import sys
 """
 date
     2018-12-26 20:05:16
@@ -17,6 +14,10 @@ interactivation
     ipyMain 针对 ipython shell 提供的接口
     main     针对命令行调用提供的接口
 """
+
+from argparse import ArgumentParser
+import win32clipboard as c
+import sys
 
 ERROR_MSG = """
 
