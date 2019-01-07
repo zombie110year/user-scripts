@@ -1,3 +1,4 @@
+#! env python
 import pathlib
 import shutil
 """

@@ -1,3 +1,4 @@
+#! env python
 from pathlib import Path
 from hashlib import md5
 
@@ -85,7 +86,7 @@ def __md5lizeFileName(glob, do):
     files = __getFiles(glob)
     for file in files:
         __renameFile(file, do)
-    with open("./change.log", "at", encoding="utf-8") as log:
+    with open("./__md5filename__.log", "at", encoding="utf-8") as log:
         for line in __gPROCESSED:
             print(line, file=log)
             print(line)

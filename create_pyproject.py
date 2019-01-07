@@ -1,3 +1,4 @@
+#! env python
 from pathlib import Path
 from argparse import ArgumentParser
 from subprocess import run

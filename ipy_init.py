@@ -1,3 +1,4 @@
+#! env python
 import get_date as myDate
 import get_path as myPath
 import get_unichar as myUniChar
