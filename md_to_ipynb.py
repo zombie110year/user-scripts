@@ -61,7 +61,7 @@ class Cell:
 
     def __init__(self, cell_type='markdown'):
         self.cell_type = cell_type
-        self.execlution_count = None
+        # self.execlution_count = None  # 只有 code - type cell 才有这项属性
         self.metadata = dict()
         self.source = list()
         self.outputs = list()
@@ -72,7 +72,7 @@ class Cell:
         resualt['metadata'] = self.metadata
         resualt['source'] = self.source
         resualt['outputs'] = self.outputs
-        resualt['execlution_count'] = self.execlution_count
+        # resualt['execlution_count'] = self.execlution_count
         return resualt
 
     def setSource(self, content: str):
@@ -133,7 +133,8 @@ def getConf():
         description="将 Markdown 文件转换为 jupyter notebook, 用 <!--%%--> 划分 cell"
     )
     parser.add_argument("path", help="输入", metavar="input.md")
-    parser.add_argument("-o", dest="output", help="输出", metavar="output.ipynb", default="output.ipynb")
+    parser.add_argument("-o", dest="output", help="输出",
+                        metavar="output.ipynb", default="output.ipynb")
     return parser.parse_args()
 
 
